@@ -169,6 +169,7 @@ vibe-brain/
 ├── LICENSE (MIT)
 ├── CONTRIBUTING.md
 ├── CHANGELOG.md
+├── TOKEN-SAVINGS.md         ← Full analytics & ROI report
 ├── .gitignore
 │
 ├── skill/
@@ -192,16 +193,37 @@ vibe-brain/
 
 ---
 
-## Token Savings
+## Token Savings & Analytics
+
+> **📊 [Full analytics report →](TOKEN-SAVINGS.md)** — Per-session breakdowns, protocol ROI analysis, dollar savings, and time savings.
+
+### Quick Numbers
+
+| Metric | Without Vibe Brain | With Vibe Brain | Savings |
+|--------|-------------------|-----------------|---------|
+| **Tokens per session** | 10,000 - 22,000 | 4,100 - 6,600 | **~60%** |
+| **Over 50 sessions** | 500K - 1.1M | 205K - 330K | **~60%** |
+| **Developer time per session** | 17-55 min wasted | 0 min | **25+ hrs saved over 50 sessions** |
+
+### Protocol ROI (Does Each Feature Pay For Itself?)
+
+| Protocol | Cost | What It Prevents | ROI |
+|----------|------|-----------------|-----|
+| Selective Loading | ~2,000 tokens | 5,000-10,000 tokens of re-explanation | **3-5x** |
+| Mid-Session Refresh | ~1,000 tokens | One 5,000-token wrong suggestion | **3-5x** |
+| Health Check | ~4,000 tokens (every 10-15 sessions) | 10,000+ token cascade from stale brain | **25-30x** |
+| Compression | ~2,000 tokens (every 2-3 sessions) | Data loss, context overflow | **∞ (data integrity)** |
+
+### What You Stop Losing
 
 | Without Vibe Brain | With Vibe Brain v3.2 |
-|-------------------|-------------------|
+|-------------------|---------------------|
 | 50,000+ tokens re-explaining | ~3,000-5,000 total (selective loading) |
 | Context dies at prompt ~15 | Refreshes every 10 prompts |
-| Forgotten decisions | Tracked in brain with timestamps + [DEEP] tags |
-| Lost threads between sessions | Threads resume automatically + Save State for exact pickup |
-| Brain drift (stale info) | Health checks every 5th compression |
+| Forgotten decisions | Tracked with timestamps + [DEEP] tags |
+| Lost threads between sessions | Threads resume + Save State for exact pickup |
 | Repeating failed approaches | Anti-Patterns section prevents dead ends |
+| Brain drift (stale info) | Health checks every 5th compression |
 | Secrets leaked to context | Security protocol: variable names only |
 | Data loss on crash | Atomic compression: brain first, then clear |
 
