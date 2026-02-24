@@ -45,17 +45,18 @@ AI coding agents forget everything between sessions. Every new conversation, you
 | **Tokens over 50 sessions** | 500K - 1.1M | 205K - 330K | **~60%** |
 | **Tokens over 200 sessions** | 2M - 4.4M | 820K - 1.32M | **~60%** |
 
-### Dollar Savings (at typical LLM pricing)
+### Dollar Savings (at Claude Opus 4.6 pricing)
 
-Based on ~$3 per million input tokens (Claude Sonnet 3.5 pricing):
+Based on $5 per million input tokens (Claude Opus 4.6 standard pricing, Feb 2026):
 
 | Sessions | Without | With Vibe Brain | You Save |
 |----------|---------|----------------|----------|
-| 10 | $0.30 - $0.66 | $0.12 - $0.20 | ~$0.20 - $0.46 |
-| 50 | $1.50 - $3.30 | $0.62 - $0.99 | ~$0.90 - $2.30 |
-| 200 | $6.00 - $13.20 | $2.46 - $3.96 | ~$3.50 - $9.24 |
+| 10 | $0.50 - $1.10 | $0.21 - $0.33 | ~$0.30 - $0.77 |
+| 50 | $2.50 - $5.50 | $1.03 - $1.65 | ~$1.50 - $3.85 |
+| 200 | $10.00 - $22.00 | $4.10 - $6.60 | ~$5.90 - $15.40 |
+| 500 | $25.00 - $55.00 | $10.25 - $16.50 | ~$14.75 - $38.50 |
 
-> **Note:** Dollar savings are modest because LLM pricing is already cheap. The real ROI is in **time saved** and **mistakes prevented** — see below.
+> **Note:** Dollar savings scale with usage but remain modest because LLM pricing is efficient per-token. The real ROI is in **developer time saved** ($1,250+ over 50 sessions at $50/hr) and **mistakes prevented** — see below.
 
 ---
 
