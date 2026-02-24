@@ -4,7 +4,7 @@
 
 Persistent project memory that gives your AI assistant full context about your codebase — architecture, features, APIs, database schema, decisions, active threads, and exactly where you left off — on every single conversation. Smart loading saves tokens. Mid-session refresh prevents context decay. Thread tracking gives continuity across sessions.
 
-Works with **Claude Code** · **Gemini** · **Cursor** · **Windsurf** · **Any AI coding agent**
+Works with **Claude Code** · **Gemini** · **Cursor** · **Windsurf** · **Cline** · **GitHub Copilot** · **Antigravity** · **Any AI coding agent**
 
 ---
 
@@ -123,18 +123,10 @@ You waste tokens re-syncing. Past decisions get forgotten. Features get re-propo
 ```bash
 mkdir -p .claude/skills/vibe-brain
 cp skill/SKILL.md .claude/skills/vibe-brain/SKILL.md
-
-cat > CLAUDE.md << 'EOF'
-# Project Instructions
-## Vibe Brain — Read Before Every Response
-Read BRAIN.md core sections before any response. Load other sections on-demand.
-If SESSION.md has content, compress first. Log to SESSION.md during work.
-Compress at 50 lines. Refresh context every 10 prompts. Track threads.
-Full spec: .claude/skills/vibe-brain/SKILL.md
-EOF
+cp templates/CLAUDE.md ./CLAUDE.md
 ```
 
-### Gemini
+### Gemini / Antigravity
 ```bash
 mkdir -p .agent/skills/vibe-brain
 cp skill/SKILL.md .agent/skills/vibe-brain/SKILL.md
@@ -146,18 +138,32 @@ cp skill/workflow.md .agent/workflows/vibe-brain.md
 ```bash
 mkdir -p .cursor/skills/vibe-brain
 cp skill/SKILL.md .cursor/skills/vibe-brain/SKILL.md
-echo 'Read BRAIN.md before every response. Follow Vibe Brain v3.2 protocols in .cursor/skills/vibe-brain/SKILL.md' >> .cursorrules
+cp templates/.cursorrules ./.cursorrules
 ```
 
 ### Windsurf
 ```bash
 mkdir -p .windsurf/skills/vibe-brain
 cp skill/SKILL.md .windsurf/skills/vibe-brain/SKILL.md
-echo 'Read BRAIN.md before every response. Follow Vibe Brain v3.2 protocols in .windsurf/skills/vibe-brain/SKILL.md' >> .windsurfrules
+cp templates/.windsurfrules ./.windsurfrules
+```
+
+### Cline
+```bash
+cp skill/SKILL.md your-project/
+cp templates/.clinerules ./.clinerules
+```
+
+### GitHub Copilot
+```bash
+mkdir -p .github
+cp templates/copilot-instructions.md .github/copilot-instructions.md
 ```
 
 ### Any Agent
-Copy `skill/SKILL.md` → agent instructions. Add: *"Follow Vibe Brain v3.2 protocols."*
+Copy `skill/SKILL.md` → agent instructions. Copy the appropriate template from `templates/` to your project root. Add: *"Follow Vibe Brain v3.2 protocols."*
+
+> **Why are these files needed?** Each AI platform has its own auto-read file (`.cursorrules`, `CLAUDE.md`, etc.) that gets loaded before the first response. These template files tell the agent to read `BRAIN.md` — which is where all your project context lives. Without them, the agent might skip reading the brain entirely.
 
 ---
 
@@ -169,24 +175,29 @@ vibe-brain/
 ├── LICENSE (MIT)
 ├── CONTRIBUTING.md
 ├── CHANGELOG.md
-├── TOKEN-SAVINGS.md         ← Full analytics & ROI report
+├── TOKEN-SAVINGS.md              ← Full analytics & ROI report
 ├── .gitignore
 │
 ├── skill/
-│   ├── SKILL.md             ← Full v3.2 spec (12 protocols + 5 critical rules)
-│   └── workflow.md           ← Auto-activation workflow
+│   ├── SKILL.md                  ← Full v3.2 spec (12 protocols + 5 critical rules)
+│   └── workflow.md                ← Auto-activation workflow (Gemini/Antigravity)
 │
 ├── templates/
-│   ├── BRAIN.md              ← Guided template (every section commented)
-│   └── SESSION.md            ← Empty buffer + threads
+│   ├── BRAIN.md                   ← Guided template (every section commented)
+│   ├── SESSION.md                 ← Empty buffer + threads
+│   ├── CLAUDE.md                  ← Auto-read config → Claude Code
+│   ├── .cursorrules               ← Auto-read config → Cursor
+│   ├── .windsurfrules             ← Auto-read config → Windsurf
+│   ├── .clinerules                ← Auto-read config → Cline
+│   └── copilot-instructions.md    ← Auto-read config → GitHub Copilot
 │
 ├── examples/
-│   ├── BRAIN-example.md      ← Full populated brain (TaskFlow SaaS)
-│   └── SESSION-example.md    ← Active session with threads
+│   ├── BRAIN-example.md           ← Full populated brain (TaskFlow SaaS)
+│   └── SESSION-example.md         ← Active session with threads
 │
 └── .github/
     ├── workflows/
-    │   └── brain-check.yml   ← CI: warn if brain is stale
+    │   └── brain-check.yml        ← CI: warn if brain is stale
     ├── ISSUE_TEMPLATE/
     └── PULL_REQUEST_TEMPLATE.md
 ```

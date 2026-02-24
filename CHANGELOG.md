@@ -2,6 +2,18 @@
 
 All notable changes documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [3.2.1] - 2026-02-24
+
+### Added
+- **Cross-Platform Auto-Read Templates** — Pre-built config files for every major AI coding platform. Drop into your project root so the agent reads `BRAIN.md` automatically on every new conversation.
+  - `templates/CLAUDE.md` → Claude Code
+  - `templates/.cursorrules` → Cursor
+  - `templates/.windsurfrules` → Windsurf
+  - `templates/.clinerules` → Cline
+  - `templates/copilot-instructions.md` → GitHub Copilot
+- **Expanded platform support** — README now lists Cline, GitHub Copilot, and Antigravity alongside existing platforms
+- **Quick Start simplified** — All platform setups now use `cp` from templates instead of inline `echo` or `cat` commands
+
 ## [3.2.0] - 2026-02-24
 
 ### Added
